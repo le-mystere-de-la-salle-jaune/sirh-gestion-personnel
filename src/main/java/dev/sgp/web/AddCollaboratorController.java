@@ -31,8 +31,9 @@ public class AddCollaboratorController extends HttpServlet{
 		
 		collaborateurs.add(new Collaborateur(req.getParameter("lastName"), 
 				req.getParameter("firstName"), LocalDate.parse(req.getParameter("birthDate")), 
-				req.getParameter("address"), req.getParameter("socialSecurityNumber"), 
-				"copain.flop@entreprise.com", "ma_photo", true));
+				req.getParameter("address"), req.getParameter("socialSecurityNumber"), "ma_photo", true));
+		
+		resp.sendRedirect(req.getContextPath() + "/collaborateurs/lister");
 	}
 
 
