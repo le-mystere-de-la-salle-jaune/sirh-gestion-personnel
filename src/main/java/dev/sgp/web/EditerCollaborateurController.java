@@ -34,7 +34,7 @@ public class EditerCollaborateurController extends HttpServlet {
 	 */
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		// recupere la valeur d'un parametre dont le nom est matricule
+		// récupère la valeur des paramètres
 		String matriculeParam = req.getParameter("matricule");
 		String titreParam = req.getParameter("titre");
 		String nomParam = req.getParameter("nom");
@@ -45,36 +45,28 @@ public class EditerCollaborateurController extends HttpServlet {
 		paramList.add(titreParam);
 		paramList.add(nomParam);
 		paramList.add(prenomParam);
-	
 
-		
 		boolean isNull = false;
+
+		// boucle pour parcourir la liste 
 		for (String s : paramList) {
-
+			// condition si l'un des paramètres est null
 			if (s==null) {
-				// renvoyer le code de la réponse
-
 				isNull = true;
-
 			}
 		}
 
+		// pour erreur 400 si la condition de l'un des paramètres est null est true, affiche le message d'erreur
 		if (isNull==true) {
 			resp.setStatus(400);
-			resp.getWriter().write("Un paramètre est attendu");
+			resp.getWriter().write("Les paramètres suivants sont incorrects");
 			resp.setContentType("text/html");
-		} else {
-			// code HTML ecrit dans le corps de la reponse
+		} else {//sinon status 201 si si tous les paramètres sont renseignés, affiche message de tous les param	
+			resp.setStatus(201);
 			resp.getWriter().write("<h1>Edition de collaborateur</h1>"
-					+ "<ul>"
-					+ "<li>matricule="+ matriculeParam + "</li>"
-					+ "<li>titre="+ titreParam + "</li>"
-					+ "<li>titre="+ nomParam + "</li>"
-					+ "<li>titre="+ prenomParam + "</li>"
-					+ "</ul>");
+					+ "matricule="+ matriculeParam + ", titre="+ titreParam + ", nom="+ nomParam + ", prenom="+ prenomParam);
 		}
 	}
-
 
 
 }
