@@ -6,8 +6,15 @@
 	<packaging>war</packaging>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>sirh-gestion-personnel Maven Webapp</name>
+	
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+	</properties>
 
 	<url>http://maven.apache.org</url>
+	
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>
@@ -23,13 +30,15 @@
 			<scope>provided</scope>
 		</dependency>
 
-	</dependencies>
+		<!-- API Servlets -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>3.1.0</version>
+			<scope>provided</scope>
+		</dependency>
 
-	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<maven.compiler.source>1.8</maven.compiler.source>
-		<maven.compiler.target>1.8</maven.compiler.target>
-	</properties>
+	</dependencies>
 
 	<build>
 		<finalName>sgp</finalName>
