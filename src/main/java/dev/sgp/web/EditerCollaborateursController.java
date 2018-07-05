@@ -70,7 +70,7 @@ public class EditerCollaborateursController extends HttpServlet {
 		{
 			resp.setStatus(400);
 			resp.setContentType("text/html");
-			resp.getWriter().write("Les paramètres suivants sont incorrectes :");
+			resp.getWriter().write("Les paramètres suivants sont i0.ncorrectes :");
 			for(Integer i : listCount)
 			{
 				resp.getWriter().write("<br/>"+listNomParam.get(i));
