@@ -50,7 +50,7 @@ public class EditerCollaborateurController extends HttpServlet {
 		StringBuilder sbErrorResponse = new StringBuilder("Les paramètres suivants sont incorrects:");
 		
 		for (Entry<String, String> param : parameters.entrySet()) {
-			if (param.getValue() == null) {
+			if (param.getValue() == null || param.getValue().isEmpty()) {
 				parameterIsMissing = true;
 				sbErrorResponse.append(" " + param.getKey() + " ");
 			}

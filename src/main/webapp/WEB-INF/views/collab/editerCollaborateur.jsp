@@ -19,7 +19,7 @@
 			<div class="form-group row">
 				<div class="col-md-10">
 					<input type="text" class="form-control" id="nom" name="nom"
-						placeholder="Nom" required>
+						placeholder="Nom">
 					<div class="invalid-feedback">Nom est obligatoire</div>
 				</div>
 			</div>

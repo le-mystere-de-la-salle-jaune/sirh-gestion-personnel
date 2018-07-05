@@ -1,7 +1,9 @@
 package dev.sgp.entite;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.ZonedDateTime;
+import java.util.ResourceBundle;
 
 public class Collaborateur {
 	public static Integer currentMatricule = 0;
@@ -26,6 +28,9 @@ public class Collaborateur {
 		this.adresse = adresse;
 		this.numeroSecuriteSociale = numeroSecuriteSociale;
 		this.matricule = currentMatricule++;
+		this.dateHeureCreation = ZonedDateTime.now();
+		this.emailPro = this.prenom+"."+this.nom+"@"+ResourceBundle.getBundle("societe").getString("societe")+".com";
+		
 	}
 
 	public Integer getMatricule() {
