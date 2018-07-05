@@ -1,6 +1,12 @@
+<!DOCTYPE html>
 <html>
+
+<head>
+<title>Index</title>
+</head>
+
 <body>
-	<h2>Hello World!</h2>
-	<p>Ceci est un super paragraphe ! C'est vraiment énorme.</p>
+	<p>Hello world!</p>
 </body>
+
 </html>
