@@ -3,8 +3,10 @@ package dev.sgp.entite;
 public class VisiteWeb {
 	
 	private Integer id;
+	public static int currentId =+ 1;
 	private String chemin;
 	private Integer tempsExecution;
+	
 	
 	
 	public VisiteWeb() {
@@ -13,8 +15,14 @@ public class VisiteWeb {
 
 	
 
+	public VisiteWeb(String chemin, Integer tempsExecution) {
+		VisiteWeb.currentId =+ 1;
+		this.chemin = chemin;
+		this.tempsExecution = tempsExecution;
+	}
+
+
 	public VisiteWeb(Integer id, String chemin, Integer tempsExecution) {
-		super();
 		this.id = id;
 		this.chemin = chemin;
 		this.tempsExecution = tempsExecution;
