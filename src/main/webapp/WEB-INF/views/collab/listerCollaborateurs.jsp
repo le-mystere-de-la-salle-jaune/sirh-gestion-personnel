@@ -64,7 +64,7 @@
 		<h1>Les collaborateurs</h1>
 
 		<form class=" container-fluid"
-			action="<%=request.getContextPath()%>/collaborateurs/lister"
+			action="<c:url value='/collaborateurs/lister'/>"
 			method="GET">
 			<div class="row justify-content-start">
 				<div class="col-sm-3">
@@ -115,7 +115,7 @@
 						<div class="card-body">
 							<div class="row">
 								<div class="col-12 col-sm-4">
-									<img src="" alt="Photo">
+									<img src="<c:url value='${collab.picture}'/>" alt="Photo">
 								</div>
 								<div class="col-12 col-sm-8">
 									<ul class="list-unstyled mt-3 mb-4">
