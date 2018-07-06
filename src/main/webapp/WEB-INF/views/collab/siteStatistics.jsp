@@ -63,7 +63,7 @@
 			<c:forEach items="${visitList}" var="stat">
 				<tr>
 					<th >${stat.key}</th>
-					<th >${stat.value.sum}</th>
+					<th >${stat.value.count}</th>
 					<th >${stat.value.min}</th>
 					<th >${stat.value.max}</th>
 					<th >${stat.value.average}</th>
