@@ -2,21 +2,25 @@ package dev.sgp.service;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+
+import org.apache.commons.lang3.RandomStringUtils;
 
 import dev.sgp.entite.Collaborateur;
 
 public class CollaborateurService {
 	
-	List<Collaborateur> listeCollaborateurs = new ArrayList<>();
+	Map<String, Collaborateur> listeCollaborateurs = new HashMap<>();
 
 	public List<Collaborateur> listerCollaborateurs() {
-		return listeCollaborateurs;
+		return new ArrayList<>(listeCollaborateurs.values());
 	}
 
 	public void sauvegarderCollaborateur(Collaborateur collab) {
 		
-		listeCollaborateurs.add(collab);
+		listeCollaborateurs.put(collab.getMatricule(), collab);
 	}
 	
 	public Collaborateur creerCollaborateur(String nom, String prenom, LocalDate dateDeNaissance, String adresse, String numSecuSocial)
@@ -31,33 +35,23 @@ public class CollaborateurService {
 		return collab;
 	}
 	
-	public boolean matriculeExiste(String matricule)
-	{
-		for(Collaborateur c : listeCollaborateurs)
-		{
-			if(matricule.equals(c.getMatricule()));
-			{
-				return true;
-			}
-		}
-		return false;
-	}
+	
 	
 	public String genererMatricule()
 	{
-		String random = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"; // Tu supprimes les lettres dont tu ne veux pas
-		String matricule;
+	boolean isOldMatricule  = false;
+	String matricule = null;
+	
 		do
 		{
-			matricule = "";
+			matricule = "M-";	
+			matricule += RandomStringUtils.random(4,"ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890");
 			
-			for(int x=0;x<3;x++)
-			{
-				int i = (int)Math.floor(Math.random() * 62); // Si tu supprimes des lettres tu diminues ce nb
-				matricule += random.charAt(i);
-			}
-		}while(matriculeExiste(matricule));
-		return matricule;
+			isOldMatricule = listeCollaborateurs.get(matricule) != null;
+			
+			}while(isOldMatricule);
+			
+			return matricule;
 	}
 	
 	public String genererEmailPro(String nom, String prenom)

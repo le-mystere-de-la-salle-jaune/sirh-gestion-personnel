@@ -37,7 +37,7 @@ public class AjouterCollaborateursController extends HttpServlet {
 		String adresse =  req.getParameter("adresse");
 		String numeroSecuSociale = req.getParameter("numeroSecuriteSociale");
 		
-		DateTimeFormatter formater = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+		//DateTimeFormatter formater = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         //LocalDate dateDeNaissanceLocalDate = LocalDate.parse(dateDeNaissance, formater);
 		
 		Collaborateur collab = collabService.creerCollaborateur(nom,prenom,LocalDate.parse(dateDeNaissance),adresse,numeroSecuSociale);
