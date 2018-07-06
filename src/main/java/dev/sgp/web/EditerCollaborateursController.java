@@ -5,16 +5,21 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import dev.sgp.service.StatistiqueService;
+import dev.sgp.util.Constantes;
+
+@WebServlet("/collaborateurs/editer")
 public class EditerCollaborateursController extends HttpServlet {
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 	
-		String matricule = req.getParameter("matricule");
+		/*String matricule = req.getParameter("matricule");
 		
 		if(matricule == null)
 		{
@@ -27,7 +32,8 @@ public class EditerCollaborateursController extends HttpServlet {
 			resp.setContentType("text/html");
 			// code HTML ecrit dans le corps de la reponse
 			resp.getWriter().write("<h1>Edition de collaborateur</h1> </br> <h4>Matricule : "+matricule+"</h4>");
-		}
+		}*/
+		req.getRequestDispatcher("/WEB-INF/views/collab/editerCollaborateurs.jsp").forward(req, resp);
 		
 	}
 
@@ -70,7 +76,7 @@ public class EditerCollaborateursController extends HttpServlet {
 		{
 			resp.setStatus(400);
 			resp.setContentType("text/html");
-			resp.getWriter().write("Les paramètres suivants sont i0.ncorrectes :");
+			resp.getWriter().write("Les paramètres suivants sont incorrectes :");
 			for(Integer i : listCount)
 			{
 				resp.getWriter().write("<br/>"+listNomParam.get(i));

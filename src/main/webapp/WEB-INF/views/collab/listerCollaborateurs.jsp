@@ -7,20 +7,49 @@
 <head>
 <meta charset="UTF-8">
 <title>SGP - App</title>
-<link rel="stylesheet" href="<%=request.getContextPath()%>/bootstrap-3.3.7-dist/css/bootstrap.css">
+<link rel="stylesheet"
+	href="<%=request.getContextPath()%>/bootstrap-3.3.7-dist/css/bootstrap.css">
 </head>
 <body>
-	<h1>Les collaborateurs</h1>
+	<nav class="navbar navbar-expand-sm navbar-light bg-light">
+		<a class="navbar-brand" href="#"> <img alt="Logo" src="">
+		</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse"
+			data-target="#navbarSupportedContent"
+			aria-controls="navbarSupportedContent" aria-expanded="false"
+			aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item"><a class="nav-link"
+					href="collaborateurs/lister">Collaborateurs <span
+						class="sr-only">(current)</span>
+				</a></li>
+				<li class="nav-item"><a class="nav-link"
+					href="statistiques/afficher">Statistiques <span class="sr-only">(current)</span>
+				</a></li>
+				<li class="nav-item"><a class="nav-link" href="#">Activitées
+						<span class="sr-only">(current)</span>
+				</a></li>
+			</ul>
+		</div>
+	</nav>
 	
-	<ul>
+	<h1>Les collaborateurs</h1>
+
+
 	<c:forEach items="${listCollabs}" var="collab">
-		<li>${collab.matricule}</li>
-		<li>${collab.nom}</li>
-		<li>${collab.prenom}</li>
-		<li>${collab.dateDeNaissance}</li>
-		<li>${collab.adresse}</li>
-		<li>${collab.numeroDeSecuriteSociale}</li>
-	</c:forEach>	
-	</ul>
+		<ul>
+			<li>${collab.matricule}</li>
+			<li>${collab.nom}</li>
+			<li>${collab.prenom}</li>
+			<li>${collab.dateDeNaissance}</li>
+			<li>${collab.adresse}</li>
+			<li>${collab.numeroDeSecuriteSociale}</li>
+		</ul>
+	</c:forEach>
+
 </body>
 </html>

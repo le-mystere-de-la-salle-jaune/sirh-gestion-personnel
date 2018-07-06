@@ -5,16 +5,16 @@ import java.time.ZonedDateTime;
 
 public class Collaborateur {
 
-	String matricule;
-	String nom;
-	String prenom;
-	LocalDate dateDeNaissance;
-	String adresse;
-	String numeroDeSecuriteSociale;
-	String emailPro;
-	String photo;
-	ZonedDateTime dateHeureCreation;
-	boolean actif;
+	private String matricule;
+	private String nom;
+	private String prenom;
+	private LocalDate dateDeNaissance;
+	private String adresse;
+	private String numeroDeSecuriteSociale;
+	private String emailPro;
+	private String photo;
+	private ZonedDateTime dateHeureCreation;
+	private boolean actif;
 
 	public Collaborateur() {
 

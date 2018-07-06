@@ -33,7 +33,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Statistiques
+          <a class="nav-link" href="statistiques/afficher">Statistiques
             <span class="sr-only">(current)</span>
           </a>
         </li>
