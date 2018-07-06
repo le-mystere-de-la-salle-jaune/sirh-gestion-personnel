@@ -9,7 +9,7 @@
 
 <!-- Bootstrap CSS -->
 <link rel="stylesheet"
-	href="<%=request.getContextPath()%>/bootstrap-4.1.1-dist/css/bootstrap.css">
+	href="<c:url value="/bootstrap-4.1.1-dist/css/bootstrap.css" />">
 </head>
 
 <body>
@@ -36,9 +36,9 @@
 	<div class="container">
 		<form id="tovalidate" method="POST">
 			<div class="form-group row">
-				<label for="inputName" class="col-md-2 col-form-label">Nom</label>
+				<label for="inputNom" class="col-md-2 col-form-label">Nom</label>
 				<div class="col-md-10">
-					<input type="text" class="form-control" id="inputName"
+					<input type="text" class="form-control" id="inputNom"
 						placeholder="Nom" name="nom" required>
 					<div class="invalid-feedback">Nom est obligatoire</div>
 				</div>

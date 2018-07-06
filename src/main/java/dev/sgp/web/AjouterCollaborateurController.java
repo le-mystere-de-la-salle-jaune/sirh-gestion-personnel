@@ -16,7 +16,7 @@ import dev.sgp.util.Constantes;
 
 @SuppressWarnings("serial")
 public class AjouterCollaborateurController extends HttpServlet {
-	
+
 	private CollaborateurService collaborateurService = Constantes.COLLAB_SERVICE;
 
 	@Override
@@ -27,7 +27,7 @@ public class AjouterCollaborateurController extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		boolean success = true;
-		
+
 		// lecture fichier de configuration
 		ResourceBundle applicaionProperties = ResourceBundle.getBundle("application");
 		String suffixeMail = applicaionProperties.getString("suffixeMail");
@@ -42,9 +42,10 @@ public class AjouterCollaborateurController extends HttpServlet {
 		// paramètres générés
 		String matricule = generateMatricule(8);
 		ZonedDateTime dateHeureCreation = ZonedDateTime.now();
-		String emailPro = prenomParam + "." + nomParam + "@" + suffixeMail;
+		String emailPro = prenomParam.toLowerCase().replaceAll("\\s+", "") + "."
+				+ nomParam.toLowerCase().replaceAll("\\s+", "") + "@" + suffixeMail;
 		boolean actif = true;
-		
+
 		if (numeroSecuriteSocialeParam.length() != 15) {
 			resp.setStatus(400);
 			success = false;
@@ -52,7 +53,7 @@ public class AjouterCollaborateurController extends HttpServlet {
 
 		Collaborateur nouveauCollaborateur = new Collaborateur(matricule, nomParam, prenomParam, dateDeNaissanceParam,
 				adresseParam, numeroSecuriteSocialeParam, emailPro, "truc.png", dateHeureCreation, actif);
-		
+
 		if (success) {
 			collaborateurService.sauvegarderCollaborateur(nouveauCollaborateur);
 			resp.sendRedirect(req.getContextPath() + "/collaborateurs/lister");
