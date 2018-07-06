@@ -12,19 +12,15 @@
 	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
 	crossorigin="anonymous">
 </head>
-<body>
-
+<header>
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-		<a class="navbar-brand" href="#">
-		</a>
+		<a class="navbar-brand" href="#"> </a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse"
 			data-target="#navbarSupportedContent"
 			aria-controls="navbarSupportedContent" aria-expanded="false"
 			aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		</button>
-
-
 
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav mr-auto">
@@ -34,16 +30,18 @@
 				<li class="nav-item"><a class="nav-link"
 					href="<c:url value='/collaborateurs/lister'/>">Collaborators</a></li>
 				<li class="nav-item"><a class="nav-link"
-					href="<c:url value='/collaborateurs/ajouter'/>">Add collaborators</a></li>
-				<li class="nav-item">
-					<a class="nav-link" href="<c:url value='/collaborateurs/eddit'/>">Edit collaborator</a>
+					href="<c:url value='/collaborateurs/ajouter'/>">Add
+						collaborators</a></li>
+				<li class="nav-item"><a class="nav-link"
+					href="<c:url value='/collaborateurs/edit'/>">Edit collaborator</a>
 				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="<c:url value='/collaborateurs/stats'/>">Statistics</a>
-				</li>
+				<li class="nav-item"><a class="nav-link"
+					href="<c:url value='/collaborateurs/stats'/>">Statistics</a></li>
 			</ul>
 		</div>
 	</nav>
+</header>
+<body>
 
 	<h2>Statistics</h2>
 

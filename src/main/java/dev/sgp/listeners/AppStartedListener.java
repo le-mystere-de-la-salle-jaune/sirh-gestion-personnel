@@ -3,21 +3,21 @@ package dev.sgp.listeners;
 import java.time.LocalDate;
 import java.util.List;
 
+import javax.servlet.ServletContextEvent;
+import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
-import javax.servlet.http.HttpSessionEvent;
-import javax.servlet.http.HttpSessionListener;
 
 import dev.sgp.entities.Collaborateur;
 import dev.sgp.service.CollaborateurService;
 import dev.sgp.util.Constantes;
 
 @WebListener
-public class AppStartedListener implements HttpSessionListener{
+public class AppStartedListener implements ServletContextListener{
 
 	private CollaborateurService collabService = Constantes.COLLAB_SERVICE;
 
 	@Override
-	public void sessionCreated(HttpSessionEvent se) {
+	public void contextInitialized(ServletContextEvent sce){
 		List<Collaborateur> collaborateurs = collabService.listerCollaborateurs();
 
 		collaborateurs.add(new Collaborateur("Dupont", "Jean",
@@ -33,9 +33,9 @@ public class AppStartedListener implements HttpSessionListener{
 	}
 
 	@Override
-	public void sessionDestroyed(HttpSessionEvent se) {
+	public void contextDestroyed(ServletContextEvent sce) {
 		// TODO Auto-generated method stub
-
+		
 	}
 
 }

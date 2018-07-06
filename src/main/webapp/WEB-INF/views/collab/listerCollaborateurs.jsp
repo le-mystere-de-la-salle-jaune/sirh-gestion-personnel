@@ -37,7 +37,7 @@
 					href="<c:url value='/collaborateurs/ajouter'/>">Add
 						collaborators</a></li>
 				<li class="nav-item"><a class="nav-link"
-					href="<c:url value='/collaborateurs/eddit'/>">Edit collaborator</a>
+					href="<c:url value='/collaborateurs/edit'/>">Edit collaborator</a>
 				</li>
 				<li class="nav-item"><a class="nav-link"
 					href="<c:url value='/collaborateurs/stats'/>">Statistics</a></li>
@@ -64,8 +64,7 @@
 		<h1>Les collaborateurs</h1>
 
 		<form class=" container-fluid"
-			action="<c:url value='/collaborateurs/lister'/>"
-			method="GET">
+			action="<c:url value='/collaborateurs/lister'/>" method="GET">
 			<div class="row justify-content-start">
 				<div class="col-sm-3">
 					<label for="name" id=labelName>Rechercher un nom ou un
@@ -81,8 +80,6 @@
 						collaborateurs désactivés</label>
 				</div>
 			</div>
-
-			<%-- request.getParameter("departement") --%>
 
 			<div class="row">
 				<div class="col-6 col-sm-3">
@@ -104,34 +101,40 @@
 
 		<br />
 
+		<%-- ${param.departement} --%>
+
 		<div class="row">
 			<c:forEach items="${collabList}" var="collab">
-				<div class="col-12 col-md-4">
-					<div class="card mb-3 box-shadow">
-						<div class="card-header">
-							<h4 class="my-0 font-weight-normal">${collab.firstName}
-								${collab.lastName} : ${collab.matricule}</h4>
-						</div>
-						<div class="card-body">
-							<div class="row">
-								<div class="col-12 col-sm-4">
-									<img src="<c:url value='${collab.picture}'/>" alt="Photo">
-								</div>
-								<div class="col-12 col-sm-8">
-									<ul class="list-unstyled mt-3 mb-4">
-										<li>Fonct. : ${collab.jobDesignation}</li>
-										<li>Départ. : ${collab.departement.getDesignation()}</li>
-										<li>Mail : ${collab.professionalEmail}</li>
-										<li>Security N° : ${collab.socialSecurityNumber}</li>
-									</ul>
-								</div>
-								<div class="col-2 offset-4 col-sm-4 offset-sm-8">
-									<button type="button" class="btn btn-outline-secondary">Editer</button>
+				<c:if
+					test="${empty param.departement || param.departement == collab.departement.id || param.departement == -1}">
+					<div class="col-12 col-md-4">
+						<div class="card mb-3 box-shadow">
+							<div class="card-header">
+								<h4 class="my-0 font-weight-normal">${collab.firstName}
+									${collab.lastName} : ${collab.matricule}</h4>
+							</div>
+							<div class="card-body">
+								<div class="row">
+									<div class="col-12 col-sm-4">
+										<img src="<c:url value='${collab.picture}'/>" alt="Photo">
+									</div>
+									<div class="col-12 col-sm-8">
+										<ul class="list-unstyled mt-3 mb-4">
+											<li>Fonct. : ${collab.jobDesignation}</li>
+											<li>Départ. : ${collab.departement.designation}</li>
+											<li>Mail : ${collab.professionalEmail}</li>
+											<li>Security N° : ${collab.socialSecurityNumber}</li>
+										</ul>
+									</div>
+									<div class="col-2 offset-4 col-sm-4 offset-sm-8">
+										<a href="<c:url value='/collaborateurs/edit'/>"
+											class="btn btn-secondary" role="button">Editer</a>
+									</div>
 								</div>
 							</div>
 						</div>
 					</div>
-				</div>
+				</c:if>
 			</c:forEach>
 
 		</div>

@@ -36,7 +36,7 @@
 				<li class="nav-item"><a class="nav-link"
 					href="<c:url value='/collaborateurs/ajouter'/>">Add collaborators</a></li>
 				<li class="nav-item">
-					<a class="nav-link" href="<c:url value='/collaborateurs/eddit'/>">Edit collaborator</a>
+					<a class="nav-link" href="<c:url value='/collaborateurs/edit'/>">Edit collaborator</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" href="<c:url value='/collaborateurs/stats'/>">Statistics</a>
