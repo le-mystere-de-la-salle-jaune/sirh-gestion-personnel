@@ -15,12 +15,10 @@
 	crossorigin="anonymous">
 <title>Collaborators list</title>
 </head>
-<body class="container-fluid">
 
+<header>
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-		<a class="navbar-brand" href="#"> <img src="navbar_panda.png"
-			width="30" height="30" alt="">
-		</a>
+		<a class="navbar-brand" href="#"> </a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse"
 			data-target="#navbarSupportedContent"
 			aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -28,25 +26,29 @@
 			<span class="navbar-toggler-icon"></span>
 		</button>
 
-
-
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav mr-auto">
 				<li class="nav-item active"><a class="nav-link" href="#">Home
 						<span class="sr-only">(current)</span>
 				</a></li>
 				<li class="nav-item"><a class="nav-link"
-					href="<c:url value='/collaborateurs/lister'/>"> Collaborators </a>
-				</li>
+					href="<c:url value='/collaborateurs/lister'/>">Collaborators</a></li>
 				<li class="nav-item"><a class="nav-link"
-					href="<c:url value='/collaborateurs/ajouter'/>"> Add
+					href="<c:url value='/collaborateurs/ajouter'/>">Add
 						collaborators</a></li>
 				<li class="nav-item"><a class="nav-link"
 					href="<c:url value='/collaborateurs/eddit'/>">Edit collaborator</a>
 				</li>
+				<li class="nav-item"><a class="nav-link"
+					href="<c:url value='/collaborateurs/stats'/>">Statistics</a></li>
 			</ul>
 		</div>
 	</nav>
+</header>
+
+<body class="container-fluid">
+
+
 
 	<div>
 		<div class="row justify-content-end">
@@ -105,30 +107,31 @@
 		<div class="row">
 			<c:forEach items="${collabList}" var="collab">
 				<div class="col-12 col-md-4">
-				<div class="card mb-3 box-shadow">
-					<div class="card-header">
-						<h4 class="my-0 font-weight-normal">${collab.firstName} ${collab.lastName} : ${collab.matricule}</h4>
-					</div>
-					<div class="card-body">
-						<div class="row">
-							<div class="col-12 col-sm-4">
-								<img src="" alt="Photo">
-							</div>
-							<div class="col-12 col-sm-8">
-								<ul class="list-unstyled mt-3 mb-4">
-									<li>Fonct. : ${collab.jobDesignation}</li>
-									<li>Départ. : ${collab.departement.getDesignation()}</li>
-									<li>Mail : ${collab.professionalEmail}</li>
-									<li>Security N° : ${collab.socialSecurityNumber}</li>
-								</ul>
-							</div>
-							<div class="col-2 offset-4 col-sm-4 offset-sm-8">
-								<button type="button" class="btn btn-outline-secondary">Editer</button>
+					<div class="card mb-3 box-shadow">
+						<div class="card-header">
+							<h4 class="my-0 font-weight-normal">${collab.firstName}
+								${collab.lastName} : ${collab.matricule}</h4>
+						</div>
+						<div class="card-body">
+							<div class="row">
+								<div class="col-12 col-sm-4">
+									<img src="" alt="Photo">
+								</div>
+								<div class="col-12 col-sm-8">
+									<ul class="list-unstyled mt-3 mb-4">
+										<li>Fonct. : ${collab.jobDesignation}</li>
+										<li>Départ. : ${collab.departement.getDesignation()}</li>
+										<li>Mail : ${collab.professionalEmail}</li>
+										<li>Security N° : ${collab.socialSecurityNumber}</li>
+									</ul>
+								</div>
+								<div class="col-2 offset-4 col-sm-4 offset-sm-8">
+									<button type="button" class="btn btn-outline-secondary">Editer</button>
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-			</div>
 			</c:forEach>
 
 		</div>

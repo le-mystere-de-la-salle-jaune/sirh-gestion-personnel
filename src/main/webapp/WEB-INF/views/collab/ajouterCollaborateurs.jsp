@@ -15,8 +15,7 @@
 </head>
 <body>
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-		<a class="navbar-brand" href="#"> <img src="navbar_panda.png"
-			width="30" height="30" alt="">
+		<a class="navbar-brand" href="#">
 		</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse"
 			data-target="#navbarSupportedContent"
@@ -38,6 +37,9 @@
 					href="<c:url value='/collaborateurs/ajouter'/>">Add collaborators</a></li>
 				<li class="nav-item">
 					<a class="nav-link" href="<c:url value='/collaborateurs/eddit'/>">Edit collaborator</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="<c:url value='/collaborateurs/stats'/>">Statistics</a>
 				</li>
 			</ul>
 		</div>
