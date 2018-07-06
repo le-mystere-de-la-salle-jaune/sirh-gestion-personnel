@@ -42,6 +42,7 @@ public class AjouterCollaborateurController extends HttpServlet {
 		String email = prenom + nom + "@societe.com";
 		Collaborateur collab = new Collaborateur(UUID.randomUUID(), nom, prenom, LocalDate.parse(dateNaissance), adresse, numSecuSoc, email, "photo", ZonedDateTime.now(ZoneId.of("Europe/Paris")), true);
 		
+		
 		// sauvegarder un nouveau collaborateur
         Constantes.COLLAB_SERVICE.sauvegarderCollaborateur(collab);
         
