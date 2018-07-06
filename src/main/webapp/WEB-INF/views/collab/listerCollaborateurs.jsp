@@ -12,8 +12,7 @@
 </head>
 <body>
 	<nav class="navbar navbar-expand-sm navbar-light bg-light">
-		<img src="images/bootstrap-solid.svg" width="30" height="30"
-			class="d-inline-block align-top" alt="">
+		<img src="<c:url value='/images/bootstrap-solid.svg'/>" width="30" height="30" class="d-inline-block align-top" alt="">
 		<button class="navbar-toggler" type="button" data-toggle="collapse"
 			data-target="#navbarSupportedContent"
 			aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -26,7 +25,7 @@
 				<li class="nav-item active"><a class="nav-link disabled"
 					href="#">Collaborateurs <span class="sr-only">(current)</span>
 				</a></li>
-				<li class="nav-item"><a class="nav-link disabled" href="#">Statistiques</a>
+				<li class="nav-item"><a class="nav-link disabled" href="/statistiques">Statistiques</a>
 				</li>
 				<li class="nav-item"><a class="nav-link disabled" href="#">Activités</a>
 				</li>
@@ -93,7 +92,7 @@
 						<div class="card-body">
 							<div class="row">
 								<div class="col-12 col-sm-4">
-									<img src="" alt="Photo">
+									<img src="<c:url value='/images/bootstrap-solid.svg'/>" alt="Photo" width="80" height="80">
 								</div>
 								<div class="col-12 col-sm-8">
 									<ul class="list-unstyled mt-3 mb-4">
