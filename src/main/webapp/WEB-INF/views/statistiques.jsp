@@ -34,8 +34,8 @@
 		</div>
 	</nav>
 	<section>
-		<table>
-			<tr>
+		<table class="table">
+			<tr scope="row">
 				<th>Chemin</th>
 				<th>Nombre de visites</th>
 				<th>Min (ms)</th>
@@ -43,7 +43,7 @@
 				<th>Moyenne (ms)</th>
 			</tr>
 			<c:forEach items="${listeStats}" var="stat">
-				</tr>
+				</tr scope="row">
 					<td>${stat.key}</td>
 					<td>${stat.value.count}</td>
 					<td>${stat.value.min}</td>

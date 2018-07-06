@@ -33,7 +33,7 @@
 			</ul>
 		</div>
 	</nav>
-
+	<h1>${context} }</h1>
 	<div class="container">
 		<form id="tovalidate" method="POST">
 			<div class="form-group row">

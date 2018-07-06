@@ -1,7 +1,5 @@
 package dev.sgp.service;
 
-import java.time.LocalDate;
-import java.time.ZonedDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,8 +11,7 @@ public class CollaborateurService {
 	
 	
 	public CollaborateurService() {
-		listeCollaborateurs.add(new Collaborateur("KACZMAREK", "Noel", LocalDate.of(2018, 7,5), "5 rue pasteur",
-			"1 25 15 ...", "mail@mail.com", "img/photo.png", ZonedDateTime.now(), true));
+		
 	}
 
 	public List<Collaborateur> listerCollaborateurs() {
