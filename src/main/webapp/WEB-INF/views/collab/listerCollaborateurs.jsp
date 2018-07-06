@@ -8,7 +8,8 @@
 <head>
 <meta charset="UTF-8">
 <title>SGP - App</title>
-<link rel="stylesheet" href="<c:url value="/bootstrap-4.1.1-dist/css/bootstrap.css" />">
+<link rel="stylesheet"
+	href="<c:url value="/bootstrap-4.1.1-dist/css/bootstrap.css" />">
 </head>
 <body class="container-fluid">
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -29,6 +30,8 @@
 				</a></li>
 				<li class="nav-item"><a class="nav-link"
 					href='<c:url value="/collaborateurs/lister"/>'>Collaborateurs</a></li>
+				<li class="nav-item"><a class="nav-link"
+					href='<c:url value="/statistiques"/>'>Statistiques</a></li>
 			</ul>
 		</div>
 	</nav>

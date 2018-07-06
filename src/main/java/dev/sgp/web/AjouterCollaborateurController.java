@@ -6,6 +6,7 @@ import java.time.ZonedDateTime;
 import java.util.ResourceBundle;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -15,6 +16,7 @@ import dev.sgp.service.CollaborateurService;
 import dev.sgp.util.Constantes;
 
 @SuppressWarnings("serial")
+@WebServlet("/collaborateurs/nouveau")
 public class AjouterCollaborateurController extends HttpServlet {
 
 	private CollaborateurService collaborateurService = Constantes.COLLAB_SERVICE;

@@ -8,7 +8,9 @@ import javax.servlet.FilterConfig;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
+import javax.servlet.annotation.WebFilter;
 
+@WebFilter("/*")
 public class FrequentationFiltre implements Filter {
 
 	private FilterConfig config = null;
@@ -20,7 +22,7 @@ public class FrequentationFiltre implements Filter {
 	@Override
 	public void doFilter(ServletRequest req, ServletResponse resp, FilterChain filterChain)
 			throws IOException, ServletException {
-		// TODO Auto-generated method stub
+		filterChain.doFilter(req, resp);
 
 	}
 
