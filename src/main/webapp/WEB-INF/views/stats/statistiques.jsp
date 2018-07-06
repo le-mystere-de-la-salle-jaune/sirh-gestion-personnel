@@ -48,7 +48,7 @@
 		<table class="table table-striped">
 
 			<!-- JSTL itération sur la liste des statisitques -->
-			<c:forEach items="${listeVisites}" var="visite">
+			
 
 				<thead>
 					<tr>
@@ -59,13 +59,14 @@
 						<th scope="col">Moyenne (ms)</th>
 					</tr>
 				</thead>
+				<c:forEach items="${listeVisites}" var="visite">
 				<tbody>
 					<tr>
 						<th>${visite.chemin}</th>
-						<td>${visite.nbVisites}</td>
-						<td>${visite.min}</td>
-						<td>${visite.max}</td>
-						<td>${visite.moyenne}</td>
+						<td>${visite.tempsExecution}</td>
+						<td></td>
+						<td></td>
+						<td></td>
 					</tr>
 				</tbody>
 			</c:forEach>

@@ -3,9 +3,8 @@ package dev.sgp.entite;
 public class VisiteWeb {
 	
 	private Integer id;
-	public static int currentId =+ 1;
 	private String chemin;
-	private Integer tempsExecution;
+	private Long tempsExecution;
 	
 	
 	
@@ -15,14 +14,13 @@ public class VisiteWeb {
 
 	
 
-	public VisiteWeb(String chemin, Integer tempsExecution) {
-		VisiteWeb.currentId =+ 1;
+	public VisiteWeb(String chemin, Long tempsExecution) {
 		this.chemin = chemin;
 		this.tempsExecution = tempsExecution;
 	}
 
 
-	public VisiteWeb(Integer id, String chemin, Integer tempsExecution) {
+	public VisiteWeb(Integer id, String chemin, Long tempsExecution) {
 		this.id = id;
 		this.chemin = chemin;
 		this.tempsExecution = tempsExecution;
@@ -65,7 +63,7 @@ public class VisiteWeb {
 	/**
 	 * @return the tempsExecution
 	 */
-	public Integer getTempsExecution() {
+	public Long getTempsExecution() {
 		return tempsExecution;
 	}
 
@@ -73,7 +71,7 @@ public class VisiteWeb {
 	/**
 	 * @param tempsExecution the tempsExecution to set
 	 */
-	public void setTempsExecution(Integer tempsExecution) {
+	public void setTempsExecution(Long tempsExecution) {
 		this.tempsExecution = tempsExecution;
 	}
 	
