@@ -1,13 +1,12 @@
 <%@ page import="java.util.List"%>
 <%@ page import="dev.sgp.entite.Collaborateur"%>
 <%@ page language="java" pageEncoding="UTF-8"%>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet"
-	href="<%=request.getContextPath()%>/bootstrap/css/bootstrap.css">
+<link rel="stylesheet" href="<c:url value='/bootstrap/css/bootstrap.css' />">
 <title>SGP - App</title>
 
 </head>

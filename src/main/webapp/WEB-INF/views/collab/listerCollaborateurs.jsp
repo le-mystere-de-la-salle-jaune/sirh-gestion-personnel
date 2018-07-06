@@ -1,13 +1,12 @@
 <%@ page import="java.util.List"%>
 <%@ page import="dev.sgp.entite.Collaborateur"%>
 <%@ page language="java" pageEncoding="UTF-8"%>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet"
-	href="<%=request.getContextPath()%>/bootstrap/css/bootstrap.css">
+<link rel="stylesheet" href="<c:url value='/bootstrap/css/bootstrap.css' />">
 <title>SGP - App</title>
 
 </head>
@@ -84,14 +83,12 @@
 			<br />
 
 			<div class="row">
-				<%
-					List<Collaborateur> collaborateurs = (List<Collaborateur>) request.getAttribute("listeCollaborateurs");
-					for (Collaborateur collaborateur : collaborateurs) {
-				%>
+				
+				<c:forEach var="collaborateur" items="${listeCollaborateurs}">
 				<div class="col-12 col-md-4">
 					<div class="card mb-3 box-shadow">
 						<div class="card-header">
-							<h4 class="my-0 font-weight-normal"><%= collaborateur.getNom() + " " + collaborateur.getPrenom() %></h4>
+							<h4 class="my-0 font-weight-normal">${collaborateur.nom} ${collaborateur.prenom}</h4>
 						</div>
 						<div class="card-body">
 							<div class="row">
@@ -102,7 +99,7 @@
 									<ul class="list-unstyled mt-3 mb-4">
 										<li>Fonct. : développeur</li>
 										<li>Départ. : informaticien</li>
-										<li>Email : <%= collaborateur.getMailPro() %></li>
+										<li>Email ${collaborateur.mailPro}</li>
 										<li>Tél. : 06.06.06.06.06</li>
 									</ul>
 								</div>
@@ -113,9 +110,8 @@
 						</div>
 					</div>
 				</div>
-				<%
-					}
-				%>
+				</c:forEach>
+			
 			</div>
 		</div>
 	</section>
