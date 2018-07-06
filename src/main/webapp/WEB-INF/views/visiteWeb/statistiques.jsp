@@ -3,6 +3,7 @@
 <%@ page import="java.util.List"%>
 <%@ page language="java" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>  
 <!DOCTYPE html>
 <html>
 <head>
@@ -38,7 +39,7 @@
 
 	<h1>Statistiques</h1>
 
-	<table class="table table-striped">
+	<table class="table table-sm table-striped table-dark">
 		<thead>
 			<tr>
 				<th scope="col">Chemin</th>
@@ -49,9 +50,19 @@
 			</tr>
 		</thead>
 		<tbody>
-		
-			<!-- TODO : forEach -->
-		
+
+			<c:forEach items="${stats}" var="stat">
+				<tr>
+					<th scope="row">${stat.key}</th>
+					<td>${stat.value.count}</td>
+					<td>${stat.value.min}</td>
+					<td>${stat.value.max}</td>
+					<td>
+						<fmt:formatNumber type="number" maxFractionDigits="3" value="${stat.value.average}" />
+					</td>
+				</tr>
+			</c:forEach>
+
 		</tbody>
 	</table>
 

@@ -1,9 +1,20 @@
 package dev.sgp.entite;
 
+import java.util.concurrent.atomic.AtomicInteger;
+
 public class VisiteWeb {
+	private static final AtomicInteger count = new AtomicInteger(0);
+	
 	private Integer id;
 	private String chemin;
 	private Integer tempsExecution;
+	
+	public VisiteWeb(String chemin, Integer tempsExecution) {
+		super();
+		this.id = count.incrementAndGet();
+		this.chemin = chemin;
+		this.tempsExecution = tempsExecution;
+	}
 
 	/**
 	 * @return the id

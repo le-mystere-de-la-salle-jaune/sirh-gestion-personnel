@@ -1,7 +1,9 @@
 package dev.sgp.web;
 
 import java.io.IOException;
+import java.util.IntSummaryStatistics;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -21,7 +23,9 @@ public class ListerVisitesWebController extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		List<VisiteWeb> visitesWeb = visiteWebService.listerVisitesWeb();
+		Map<String, IntSummaryStatistics> stats = visiteWebService.genererStatistiques();
 		req.setAttribute("listeVisitesWeb", visitesWeb);
+		req.setAttribute("stats", stats);
 		req.getRequestDispatcher("/WEB-INF/views/visiteWeb/statistiques.jsp").forward(req, resp);
 	}
 
