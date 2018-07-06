@@ -4,8 +4,7 @@
 
 	<servlet>
 		<servlet-name>ListerCollaborateursController</servlet-name>
-		<servlet-class>dev.sgp.web.ListerCollaborateursController
-		</servlet-class>
+		<servlet-class>dev.sgp.web.ListerCollaborateursController</servlet-class>
 	</servlet>
 
 	<servlet-mapping>
@@ -17,8 +16,7 @@
 
 	<servlet>
 		<servlet-name>EditerCollaborateurController</servlet-name>
-		<servlet-class>dev.sgp.web.EditerCollaborateurController
-		</servlet-class>
+		<servlet-class>dev.sgp.web.EditerCollaborateurController</servlet-class>
 	</servlet>
 
 	<servlet-mapping>
@@ -30,12 +28,33 @@
 
 	<servlet>
 		<servlet-name>AjouterCollaborateurController</servlet-name>
-		<servlet-class>dev.sgp.web.AjouterCollaborateurController
-		</servlet-class>
+		<servlet-class>dev.sgp.web.AjouterCollaborateurController</servlet-class>
 	</servlet>
 
 	<servlet-mapping>
 		<servlet-name>AjouterCollaborateurController</servlet-name>
 		<url-pattern>/collaborateurs/ajouter</url-pattern>
 	</servlet-mapping>
+
+
+	<servlet>
+		<servlet-name>ListerStatistiquesController</servlet-name>
+		<servlet-class>dev.sgp.web.ListerStatistiquesController</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>ListerStatistiquesController</servlet-name>
+		<url-pattern>/statistiques</url-pattern>
+	</servlet-mapping>
+
+
+	<filter>
+		<filter-name>TimerFilter</filter-name>
+		<filter-class>dev.sgp.filtre.FrequentationFilter</filter-class>
+	</filter>
+
+	<filter-mapping>
+		<filter-name>TimerFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
 </web-app>
