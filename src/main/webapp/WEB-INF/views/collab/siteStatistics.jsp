@@ -62,11 +62,11 @@
 		
 			<c:forEach items="${visitList}" var="stat">
 				<tr>
-					<th >${stat.path}</th>
-					<th >${stat.id}</th>
-					<th >${stat.executionTime}</th>
-					<th >${stat.executionTime}</th>
-					<th >${stat.executionTime}</th>
+					<th >${stat.key}</th>
+					<th >${stat.value.sum}</th>
+					<th >${stat.value.min}</th>
+					<th >${stat.value.max}</th>
+					<th >${stat.value.average}</th>
 				</tr>
 			</c:forEach>
 		</tbody>
