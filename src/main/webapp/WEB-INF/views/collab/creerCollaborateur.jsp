@@ -1,4 +1,5 @@
 <%@page import="java.util.List"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page language="java" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -6,7 +7,7 @@
 <meta charset="UTF-8">
 <title>SGP - App</title>
 <link rel="stylesheet"
-	href="<%=request.getContextPath()%>/bootstrap-4.1.1-dist/css/bootstrap.css">
+	href=<c:url value='/bootstrap-4.1.1-dist/css/bootstrap.css'/>>
 </head>
 <body>
 
@@ -25,7 +26,7 @@
 	<!-- Le titre de la page -->
     <h1>Nouveau Collaborateur</h1>
 
-    <form action="<%=request.getContextPath()%>/collaborateurs/creer" method="post">
+    <form action=<c:url value='/collaborateurs/creer'/> method="post">
         <div class="form row mb-3">
             <div class="col">
                 <label class="col-form-label"> Nom :</label>

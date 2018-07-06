@@ -1,5 +1,6 @@
 <%@page import="java.util.List"%>
 <%@page import="dev.sgp.service.Collaborateur"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page language="java" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -26,14 +27,11 @@
 
 	<h1>Les collaborateurs</h1>
 	<ul>
-		<%
-			List<Collaborateur> listeNoms = (List<Collaborateur>) request.getAttribute("listeNoms");
-			for (Collaborateur collab : listeNoms) {
-		%>
-		<li><%=collab.getNom()%></li>
-		<%
-			}
-		%>
+		
+		<c:forEach  var="collab" items="${listeNoms}" >
+			 <li><c:out value= "${collab.getNom()}"/></li>
+		</c:forEach>
+
 	</ul>
 
 
