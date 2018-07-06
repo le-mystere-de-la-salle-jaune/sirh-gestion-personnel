@@ -5,6 +5,7 @@ import java.time.LocalDate;
 import java.util.List;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -13,6 +14,7 @@ import dev.sgp.service.Collaborateur;
 import dev.sgp.service.CollaborateurService;
 import dev.sgp.util.Constantes;
 
+@WebServlet(asyncSupported = false, name = "CreerCollaborateurController", urlPatterns = {"/collaborateurs/creer"} )
 public class CreerCollaborateurController extends HttpServlet  {
 		// recuperation du service
 		private CollaborateurService collabService = Constantes.COLLAB_SERVICE;
@@ -33,10 +35,8 @@ public class CreerCollaborateurController extends HttpServlet  {
 			String numSecuSociale = req.getParameter("numSecuSociale");
 			
 			collabService.sauvegarderCollaborateur(new Collaborateur(nom,prenom,dateNaissance,adresse,numSecuSociale ));
-			System.out.println("Bouh !");
 			
 			resp.sendRedirect(req.getContextPath() + "/collaborateurs/lister");
-			//req.getRequestDispatcher("/WEB-INF/views/collab/listerCollaborateurs.jsp").forward(req, resp);
 			
 			
 			

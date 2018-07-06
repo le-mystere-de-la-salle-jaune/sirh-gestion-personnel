@@ -5,6 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -13,6 +14,7 @@ import dev.sgp.service.Collaborateur;
 import dev.sgp.service.CollaborateurService;
 import dev.sgp.util.Constantes;
 
+@WebServlet(asyncSupported = false, name = "ListerCollaborateurController", urlPatterns = {"/collaborateurs/lister"} )
 public class ListerCollaborateursController extends HttpServlet {
 	// recuperation du service
 	private CollaborateurService collabService = Constantes.COLLAB_SERVICE;
