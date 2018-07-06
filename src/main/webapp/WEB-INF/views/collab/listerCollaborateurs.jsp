@@ -1,6 +1,7 @@
 <%@page import="dev.sgp.entite.Collaborateur"%>
 <%@page import="java.util.List"%>
 <%@page language="java" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -78,14 +79,13 @@
 
         <div class="row no-gutters justify-content-around">
         
-		<%
-			
-		List<Collaborateur> collaborateurs = (List<Collaborateur>) request.getAttribute("listCollab");
-			for (Collaborateur collab : collaborateurs) {
-		%>
-		
+
+        <!-- JSTL itération sur la liste des collaborateurs -->
+		<c:forEach items="${listCollab}" var="collab"> 
+
+
             <div class="card bg-light col-md-4 mb-3">
-                <div class="card-header"> <%=collab.getNom()%> <%=collab.getPrenom()%></div>
+                <div class="card-header"> ${collab.nom} ${collab.prenom}</div>
                 <div class="card-body row">
                     <div class="col-sm-auto">
                         <img src="https://www.noob-online.com/images/avatar/1340.png" class="rounded float-left" alt="photo d'identité">
@@ -99,20 +99,13 @@
                     <div class="col-auto">
                         <p>&nbsp;</p>
                         <p>&nbsp;</p>
-                        <p><%=collab.getEmail()%></p>
-                        <p><%=collab.getNumSecuSoc()%></p>
+                        <p>${collab.email}</p>
+                        <p>${collab.numSecuSoc}</p>
                         <button type="submit" class="btn edit btn-primary">Editer</button>
                     </div>
                 </div>
             </div>
-
-            
-
-            
-        <%
-                }
-		%>
-
+		</c:forEach>
         </div>
     </div>
 
