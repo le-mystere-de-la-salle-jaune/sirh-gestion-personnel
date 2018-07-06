@@ -59,14 +59,14 @@
 						<th scope="col">Moyenne (ms)</th>
 					</tr>
 				</thead>
-				<c:forEach items="${listeVisites}" var="visite">
+				<c:forEach items="${mapCheminStats}" var="visite">
 				<tbody>
 					<tr>
-						<th>${visite.chemin}</th>
-						<td>${visite.tempsExecution}</td>
-						<td></td>
-						<td></td>
-						<td></td>
+						<th>${visite.key}</th>
+						<td>${visite.value.count}</td>
+						<td>${visite.value.min}</td>
+						<td>${visite.value.max}</td>
+						<td>${visite.value.average}</td>
 					</tr>
 				</tbody>
 			</c:forEach>

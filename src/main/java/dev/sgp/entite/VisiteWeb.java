@@ -1,18 +1,17 @@
 package dev.sgp.entite;
 
 public class VisiteWeb {
-	
+
 	private Integer id;
 	private String chemin;
 	private Long tempsExecution;
-	
-	
-	
+
+
 	public VisiteWeb() {
 		super();
 	}
 
-	
+
 
 	public VisiteWeb(String chemin, Long tempsExecution) {
 		this.chemin = chemin;
@@ -25,7 +24,6 @@ public class VisiteWeb {
 		this.chemin = chemin;
 		this.tempsExecution = tempsExecution;
 	}
-
 
 
 	/**
@@ -74,8 +72,8 @@ public class VisiteWeb {
 	public void setTempsExecution(Long tempsExecution) {
 		this.tempsExecution = tempsExecution;
 	}
-	
-	
-	
+
+
+
 
 }

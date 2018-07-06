@@ -16,7 +16,7 @@
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href='<c:url value="/collaborateurs/lister"/>'>
+        <a class="navbar-brand" href='<c:url value="/"/>'>
             <img src="https://static.getjar.com/icon-50x50/76/945275_thm.jpg" width="30" height="30" alt="">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"

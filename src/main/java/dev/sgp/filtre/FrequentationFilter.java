@@ -1,6 +1,8 @@
 package dev.sgp.filtre;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
@@ -46,10 +48,13 @@ public class FrequentationFilter implements Filter {
 		long tempsExecution = after - before;
 		VisiteWeb visiteWeb = new VisiteWeb(chemin, tempsExecution);
 		statService.sauvegarderVisiteWeb(visiteWeb);
+
+		
 		
 		
 		// récupère les valeurs du filter
-		VisiteWeb visite = new VisiteWeb(chemin, tempsExecution);
+		//VisiteWeb visite = new VisiteWeb(chemin, tempsExecution);
+		
 		
 		
 

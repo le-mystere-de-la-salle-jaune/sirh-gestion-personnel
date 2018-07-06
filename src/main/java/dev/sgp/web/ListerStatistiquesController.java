@@ -2,6 +2,8 @@ package dev.sgp.web;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.LongSummaryStatistics;
+import java.util.Map;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -25,8 +27,8 @@ public class ListerStatistiquesController extends HttpServlet {
 	ServletException, IOException {
 		
 		// utilisation du service
-		List<VisiteWeb> listeVisites = statService.listerVisites();
-		req.setAttribute("listeVisites", listeVisites);
+		Map<String, LongSummaryStatistics> mapCheminStats = statService.calculerStats();
+		req.setAttribute("mapCheminStats", mapCheminStats);
 		req.getRequestDispatcher("/WEB-INF/views/stats/statistiques.jsp")
 		.forward(req, resp);
 	}

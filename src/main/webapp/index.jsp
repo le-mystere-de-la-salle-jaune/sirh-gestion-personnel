@@ -16,7 +16,7 @@
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href='<c:url value="/"/>'>
             <img src="https://static.getjar.com/icon-50x50/76/945275_thm.jpg" width="30" height="30" alt="">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
@@ -26,12 +26,12 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item active">
-                    <a class="nav-link" href="<%=request.getContextPath()%>/collaborateurs/lister">Collaborateurs
+                    <a class="nav-link" href='<c:url value="/collaborateurs/lister"/>'>Collaborateurs
                         <span class="sr-only">(current)</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Statistiques</a>
+                    <a class="nav-link" href='<c:url value="/statistiques"/>'>Statistiques</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Activités</a>
@@ -42,53 +42,20 @@
 
 
     <div class="container-fluid">
-        <div class="row justify-content-end mr-3">
-
-            <button type="submit" class="btn btn-primary" onclick="window.location.href='<%=request.getContextPath()%>/collaborateurs/ajouter'">Ajouter un nouveau collaborateur</button>
-
-        </div>
-        <h1>Les collaborateurs</h1>
-        <form>
-            <div class="form-group row justify-content-md">
-                <label for="searchByName" class="col-md-4 col-form-label">Rechercher un nom ou un prénom qui commence par :</label>
-                <div class="col-md-3">
-                    <input type="text" class="form-control" id="searchByName" aria-describedby="search">
-                </div>
-                <div class="col-md-auto">
-                    <button type="submit" class="btn-add btn-primary">Rechercher</button>
-                </div>
-                <div class="col-md-auto">
-                    <div class="form-group form-check">
-                        <input type="checkbox" class="form-check-input" id="seeAllCheck">
-                        <label class="form-check-label" for="seeAllCheck">Voir les collaborateurs désactivés</label>
-                    </div>
-                </div>
-            </div>
-            <div class="form-group row justify-content-md">
-                <label for="FilterByAreaSelect" class="col-md-4 col-form-label">Filter par département :</label>
-                <div class="col-md-3">
-                    <select class="form-control" id="FilterByAreaSelect">
-                        <option>Tous</option>
-                        <option>Comptabilité</option>
-                        <option>Ressources Humaines</option>
-                        <option>Informatique</option>
-                    </select>
-                </div>
-            </div>
-        </form>
-
-        <div class="row no-gutters justify-content-around">
+    
+    <h1>Bienvenue</h1>
         
-    </div>
+<nav class="navbar navbar-light bg-light">
+  <a class="navbar-brand" href='<c:url value="/collaborateurs/lister"/>'>Collaborateurs</a>
+</nav>
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
-        crossorigin="anonymous"></script>
+<nav class="navbar navbar-light bg-light">
+  <a class="navbar-brand" href='<c:url value="/statistiques"/>'>Statistiques</a>
+</nav>
+        
+
+        
+
     </div>
 </body>
 
