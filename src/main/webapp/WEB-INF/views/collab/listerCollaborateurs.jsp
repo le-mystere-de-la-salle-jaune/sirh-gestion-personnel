@@ -2,6 +2,7 @@
 <%@page import="dev.sgp.entities.Collaborateur"%>
 <%@page import="dev.sgp.entities.Departement"%>
 <%@ page language="java" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -27,19 +28,22 @@
 			<span class="navbar-toggler-icon"></span>
 		</button>
 
+
+
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav mr-auto">
 				<li class="nav-item active"><a class="nav-link" href="#">Home
 						<span class="sr-only">(current)</span>
 				</a></li>
 				<li class="nav-item"><a class="nav-link"
-					href="<%=request.getContextPath()%>/collaborateurs/lister">Collaborators</a>
+					href="<c:url value='/collaborateurs/lister'/>"> Collaborators </a>
 				</li>
 				<li class="nav-item"><a class="nav-link"
-					href="<%=request.getContextPath()%>/collaborateurs/ajouter">Add
-						colaborators</a></li>
-				<li class="nav-item"><a class="nav-link" href="#">Edit
-						collaborator</a></li>
+					href="<c:url value='/collaborateurs/ajouter'/>"> Add
+						collaborators</a></li>
+				<li class="nav-item"><a class="nav-link"
+					href="<c:url value='/collaborateurs/eddit'/>">Edit collaborator</a>
+				</li>
 			</ul>
 		</div>
 	</nav>
@@ -47,32 +51,36 @@
 	<div>
 		<div class="row justify-content-end">
 			<div class="col-sm-3-offset-9">
-				<input type="button" value="Ajouter un nouveau collaborateur"
-					style="margin-top: 10px; margin-right: 5px;"
-					onclick="window.location.href='<%=request.getContextPath()%>/collaborateurs/ajouter'">
+
+				<a href="<c:url value='/collaborateurs/ajouter'/>"
+					class="btn btn-secondary" role="button"> Ajouter un nouveau
+					collaborateur </a>
 			</div>
 		</div>
 		<br />
 
 		<h1>Les collaborateurs</h1>
 
-		<form class=" container-fluid" action="<%=request.getContextPath()%>/collaborateurs/lister" method="GET" >
+		<form class=" container-fluid"
+			action="<%=request.getContextPath()%>/collaborateurs/lister"
+			method="GET">
 			<div class="row justify-content-start">
 				<div class="col-sm-3">
-					<label for="name" id=labelName>Rechercher un nom ou un prénom qui commence par :</label>
+					<label for="name" id=labelName>Rechercher un nom ou un
+						prénom qui commence par :</label>
 				</div>
 				<div class="col-sm-4">
-					<input type="text" id="name"> 
+					<input type="text" id="name">
 					<button type="submit" id="rechercher">Rechercher</button>
 				</div>
 				<div class="col-sm-5">
 					<input type="checkbox" id="checkAddCollab"> <label
-						for="checkAddCollab" style="word-break: normal;">
-						Voir les collaborateurs désactivés</label>
+						for="checkAddCollab" style="word-break: normal;"> Voir les
+						collaborateurs désactivés</label>
 				</div>
 			</div>
 
-				<%-- request.getParameter("departement") --%>
+			<%-- request.getParameter("departement") --%>
 
 			<div class="row">
 				<div class="col-6 col-sm-3">
@@ -82,31 +90,24 @@
 				<div class="col-sm-3">
 					<select class="form-control" id="departement" name="departement">
 
-						<%
-							List<Departement> depList = (List<Departement>) request.getAttribute("depList");
-							for (Departement dep : depList) {
-						%>
-						<option value = "<%=dep.getId()%>"><%=dep.getDesignation()%></option>
-						<%
-							}
-						%>
+						<option value="-1">Tous</option>
+						<c:forEach items="${depList}" var="dep">
+							<option value="${dep.id}">${dep.designation}</option>
+						</c:forEach>
+
 					</select>
 				</div>
 			</div>
 		</form>
-		
+
 		<br />
 
 		<div class="row">
-
-			<%
-				List<Collaborateur> collabList = (List<Collaborateur>) request.getAttribute("collabList");
-				for (Collaborateur collab : collabList) {
-			%>
-			<div class="col-12 col-md-4">
+			<c:forEach items="${collabList}" var="collab">
+				<div class="col-12 col-md-4">
 				<div class="card mb-3 box-shadow">
 					<div class="card-header">
-						<h4 class="my-0 font-weight-normal"><%=collab.getFirstName()%> <%=collab.getLastName()%> : <%=collab.getMatricule()%></h4>
+						<h4 class="my-0 font-weight-normal">${collab.firstName} ${collab.lastName} : ${collab.matricule}</h4>
 					</div>
 					<div class="card-body">
 						<div class="row">
@@ -115,10 +116,10 @@
 							</div>
 							<div class="col-12 col-sm-8">
 								<ul class="list-unstyled mt-3 mb-4">
-									<li>Fonct. : <%=collab.getJobDesignation()%></li>
-									<li>Départ. : <%=collab.getDepartement().getDesignation()%></li>
-									<li>Mail : <%=collab.getProfessionalEmail()%></li>
-									<li>Security N° : <%=collab.getSocialSecurityNumber()%></li>
+									<li>Fonct. : ${collab.jobDesignation}</li>
+									<li>Départ. : ${collab.departement.getDesignation()}</li>
+									<li>Mail : ${collab.professionalEmail}</li>
+									<li>Security N° : ${collab.socialSecurityNumber}</li>
 								</ul>
 							</div>
 							<div class="col-2 offset-4 col-sm-4 offset-sm-8">
@@ -128,10 +129,7 @@
 					</div>
 				</div>
 			</div>
-
-			<%
-				}
-			%>
+			</c:forEach>
 
 		</div>
 	</div>

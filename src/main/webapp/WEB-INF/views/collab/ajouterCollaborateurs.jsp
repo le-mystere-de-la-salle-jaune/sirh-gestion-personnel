@@ -1,5 +1,6 @@
 <%@page import="java.util.List"%>
 <%@ page language="java" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,7 +11,7 @@
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
 	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
 	crossorigin="anonymous">
-	<title>Add collaborator</title>
+<title>Add collaborator</title>
 </head>
 <body>
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -24,19 +25,20 @@
 			<span class="navbar-toggler-icon"></span>
 		</button>
 
+
+
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav mr-auto">
 				<li class="nav-item active"><a class="nav-link" href="#">Home
 						<span class="sr-only">(current)</span>
 				</a></li>
 				<li class="nav-item"><a class="nav-link"
-					href="<%=request.getContextPath()%>/collaborateurs/lister">Collaborators</a>
-				</li>
+					href="<c:url value='/collaborateurs/lister'/>">Collaborators</a></li>
 				<li class="nav-item"><a class="nav-link"
-					href="<%=request.getContextPath()%>/collaborateurs/ajouter">Add
-						colaborators</a></li>
-				<li class="nav-item"><a class="nav-link" href="#">Edit
-						collaborator</a></li>
+					href="<c:url value='/collaborateurs/ajouter'/>">Add collaborators</a></li>
+				<li class="nav-item">
+					<a class="nav-link" href="<c:url value='/collaborateurs/eddit'/>">Edit collaborator</a>
+				</li>
 			</ul>
 		</div>
 	</nav>
@@ -45,7 +47,8 @@
 
 	<div class="container">
 		<form id="tovalidate"
-			action="<%=request.getContextPath()%>/collaborateurs/ajouter" method="POST">
+			action="<%=request.getContextPath()%>/collaborateurs/ajouter"
+			method="POST">
 			<div class="form-group row">
 				<label for="inputName" class="col-md-2 col-form-label">Nom</label>
 				<div class="col-md-10">
