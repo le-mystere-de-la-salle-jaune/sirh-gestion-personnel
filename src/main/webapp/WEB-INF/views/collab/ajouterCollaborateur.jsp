@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -8,8 +9,8 @@
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 <!-- Bootstrap CSS -->
-<link rel="stylesheet"
-	href="<c:url value="/bootstrap-4.1.1-dist/css/bootstrap.css" />">
+<link rel="stylesheet" href="<c:url value="/bootstrap-4.1.1-dist/css/bootstrap.css" />">
+
 </head>
 
 <body>

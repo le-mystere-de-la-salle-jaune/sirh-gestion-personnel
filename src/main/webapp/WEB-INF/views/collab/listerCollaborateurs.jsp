@@ -8,8 +8,7 @@
 <head>
 <meta charset="UTF-8">
 <title>SGP - App</title>
-<link rel="stylesheet"
-	href="<c:url value="/bootstrap-4.1.1-dist/css/bootstrap.css" />">
+<link rel="stylesheet" href="<c:url value="/bootstrap-4.1.1-dist/css/bootstrap.css" />">
 </head>
 <body class="container-fluid">
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -88,7 +87,7 @@
 					<div class="card-body">
 						<div class="row">
 							<div class="col-12 col-sm-4">
-								<img src="" alt="Photo">
+								<img src="truc.png" alt="Photo">
 							</div>
 							<div class="col-12 col-sm-8">
 								<ul class="list-unstyled mt-3 mb-4">

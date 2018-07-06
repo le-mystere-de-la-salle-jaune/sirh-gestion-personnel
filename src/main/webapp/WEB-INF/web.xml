@@ -19,6 +19,7 @@
 			dev.sgp.web.AjouterCollaborateurController
 		</servlet-class>
 	</servlet>
+
 	<servlet-mapping>
 		<servlet-name>ListerCollaborateursController</servlet-name>
 		<url-pattern>/collaborateurs/lister</url-pattern>
@@ -31,4 +32,13 @@
 		<servlet-name>AjouterCollaborateurController</servlet-name>
 		<url-pattern>/collaborateurs/nouveau</url-pattern>
 	</servlet-mapping>
+
+	<filter>
+		<filter-name>FrequentationFiltre</filter-name>
+		<filter-class>dev.sgp.filtre.FrequentationFiltre</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>FrequentationFiltre</filter-name>
+		<url-pattern>/statistiques</url-pattern>
+	</filter-mapping>
 </web-app>
